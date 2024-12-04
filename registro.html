@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Formigo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .navbar img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .navbar span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-left: 10px;
+        }
+
+        /* Formulario de registro */
+        .login-container {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 40px 50px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px; /* Aumentado para hacerlo más amplio */
+            margin-top: 100px; /* Ajusta la posición del formulario */
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .login-container p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #777;
+        }
+
+        .login-container input {
+            width: 100%;
+            padding: 15px; /* Aumentado el padding para hacerlo más grande */
+            margin: 10px 0; /* Aumentado el margen para más separación */
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .login-container button {
+            width: auto; /* Ajustado el tamaño automático */
+            padding: 10px 30px; /* Tamaño reducido */
+            background-color: #007bff;
+            color: white;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 auto; /* Centrado del botón */
+            display: block;
+            margin-top: 20px; /* Separación adicional */
+        }
+
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .register-now {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .register-now a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            <img src="mochi.jpg" alt="Formigo Logo"> <!-- Reemplaza "formigo-logo.png" con tu archivo de logo -->
+            <span>Formigo</span>
+        </div>
+    </div>
+
+    <!-- Registro Formulario -->
+    <div class="login-container">
+        <h2>Crear Cuenta</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Contraseña" required>
+        <input type="text" placeholder="Nombre" required>
+        <input type="text" placeholder="Apellidos" required>
+        <button type="submit" onclick="window.location.href='pregunta1.html'">Registrarse</button>
+        
+        <div class="register-now">
+            <p>¿Ya tienes cuenta? <a href="iniciosesion.html">Iniciar sesión</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

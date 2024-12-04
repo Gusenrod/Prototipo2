@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Formigo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Estilo para el navbar */
+        .navbar {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar img {
+            width: 40px;
+            height: 40px;
+        }
+        .navbar span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-left: 10px;
+        }
+        .navbar .btn-container {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .btn-container a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navbar .btn-container a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilo para la sección principal */
+        .main-section {
+            padding: 80px 20px;
+            background-color: #ffffff;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .main-section h1 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+        .main-section p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 60px;
+        }
+        .main-section .btn-comenzar {
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 60px;
+            display: inline-block;
+        }
+        .main-section .btn-comenzar:hover {
+            background-color: #0056b3;
+        }
+
+        /* Estilo para la sección de información (parte inferior) */
+        .info-section {
+            padding: 50px 20px;
+            background-color: #007bff;
+            color: white;
+            margin-top: auto;
+        }
+        .info-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .info-section p {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div style="display: flex; align-items: center;">
+            <img src="mochi.jpg" alt="Formigo Logo">
+            <span>Formigo</span>
+        </div>
+        <div class="btn-container">
+            <a href="iniciosesion.html">Iniciar sesión</a>
+            <a href="registro.html">Registrarse</a>
+        </div>
+    </div>
+
+    <!-- Sección Principal -->
+    <div class="main-section">
+        <h1>Bienvenido a Formigo</h1>
+        <p>Conoce las mejores oportunidades para tu carrera y prepárate para el éxito profesional.</p>
+        <a href="iniciosesion.html" class="btn-comenzar">Comenzar</a>
+    </div>
+
+    <!-- Sección de Información (Parte Inferior) -->
+    <div class="info-section">
+        <h2>¿Por qué elegir Formigo?</h2>
+        <p>Formigo te ayuda a encontrar el camino adecuado para tu carrera profesional, brindándote herramientas, recursos y bancos de preguntas para que estés preparado para enfrentar entrevistas y encontrar el puesto adecuado.</p>
+    </div>
+
+</body>
+</html>

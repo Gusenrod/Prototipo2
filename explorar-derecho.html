@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar Rubros - Contabilidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .logo span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .navbar .nav-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .navbar .nav-section a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .navbar .profile {
+            position: relative;
+        }
+
+        .navbar .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .navbar .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .navbar .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .navbar .dropdown a:hover {
+            background-color: #f4f4f4;
+        }
+
+        .profile.active .dropdown {
+            display: block;
+        }
+
+        /* Contenedor principal */
+        .container {
+            margin-top: 100px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Grid de rubros */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        .card strong {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .card button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const profile = document.querySelector(".profile");
+            const dropdown = document.querySelector(".dropdown");
+    
+            profile.addEventListener("click", () => {
+                profile.classList.toggle("active");
+            });
+    
+            document.addEventListener("click", (e) => {
+                if (!profile.contains(e.target)) {
+                    profile.classList.remove("active");
+                }
+            });
+    
+            // Redirigir a landingpage.html al hacer clic en "Cerrar Sesión"
+            dropdown.addEventListener("click", (e) => {
+                if (e.target.tagName === "A") {
+                    location.href = "landingpage.html";
+                }
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="mochi.jpg" alt="Formigo Logo">
+            <span>Formigo</span>
+        </div>
+        <div class="nav-section">
+            <div class="profile">
+                <img src="person-circle.svg" alt="User Profile">
+                <div class="dropdown">
+                    <a href="#">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h1>Explora los rubros de Derecho:</h1>
+        <div class="grid">
+            <div class="card">
+                <strong>Abogado Corporativo</strong>
+                <p>Asesora a empresas en sus obligaciones legales.</p>
+                <button onclick="location.href='opcionesrubro.html'">Explorar</button>
+
+            </div>
+            <div class="card">
+                <strong>Abogado Penalista</strong>
+                <p>Especializado en delitos y juicios criminales.</p>
+                <button onclick="location.href='opcionesrubro.html'">Explorar</button>
+
+            </div>
+            <div class="card">
+                <strong>Abogado Laboral</strong>
+                <p>Aborda conflictos entre empleadores y empleados.</p>
+                <button onclick="location.href='opcionesrubro.html'">Explorar</button>
+
+            </div>
+            <div class="card">
+                <strong>Consultor Jurídico</strong>
+                <p>Brinda orientación legal en diversas áreas.</p>
+                <button onclick="location.href='opcionesrubro.html'">Explorar</button>
+
+            </div>
+            <div class="card">
+                <strong>Notario Público</strong>
+                <p>Autoriza documentos legales y oficiales.</p>
+                <button onclick="location.href='opcionesrubro.html'">Explorar</button>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

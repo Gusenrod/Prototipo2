@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Rubro - Contabilidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .logo span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .navbar .profile {
+            position: relative;
+        }
+
+        .navbar .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .navbar .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .navbar .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .navbar .dropdown a:hover {
+            background-color: #f4f4f4;
+        }
+
+        .profile.active .dropdown {
+            display: block;
+        }
+
+        /* Contenedor principal */
+        .container {
+            margin-top: 140px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .section p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const profile = document.querySelector(".profile");
+            const dropdown = document.querySelector(".dropdown");
+    
+            profile.addEventListener("click", () => {
+                profile.classList.toggle("active");
+            });
+    
+            document.addEventListener("click", (e) => {
+                if (!profile.contains(e.target)) {
+                    profile.classList.remove("active");
+                }
+            });
+    
+            // Redirigir a landingpage.html al hacer clic en "Cerrar Sesión"
+            dropdown.addEventListener("click", (e) => {
+                if (e.target.tagName === "A") {
+                    location.href = "landingpage.html";
+                }
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="mochi.jpg" alt="Formigo Logo">
+            <span>Formigo</span>
+        </div>
+        <div class="profile">
+            <img src="person-circle.svg" alt="User Profile">
+            <div class="dropdown">
+                <a href="#">Cerrar Sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h1>Información del Rubro: Contador publico</h1>
+
+        <div class="section">
+            <h2>Cómo ser contador público certificado</h2>
+            <p>
+                Los contadores públicos certificados ayudan a sus clientes en asuntos contables, fiscales y de negocios. 
+                Para obtener esta certificación, es necesario cursar una carrera universitaria, obtener el aval del IMCP y mantenerse actualizado con las reformas fiscales y normas legales.
+            </p>
+            <p>
+                Como contador certificado, puedes trabajar en auditorías, asesorías fiscales y financieras, así como en compañías, instituciones gubernamentales y a nivel internacional.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Funciones de un contador público</h2>
+            <p>
+                Las principales responsabilidades incluyen la preparación de estados financieros, auditorías, asesorías fiscales y la gestión financiera de empresas. 
+                También desempeñan un rol clave en la toma de decisiones estratégicas para organizaciones.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Video: ¿Qué hace un contador público?</h2>
+            <iframe src="https://www.youtube.com/watch?v=65U0x1jznPI" title="Video sobre Contabilidad"></iframe>
+        </div>
+
+        <div class="section">
+            <h2>Requisitos para ser contador público certificado</h2>
+            <p>
+                1. Completar una licenciatura en contabilidad.<br>
+                2. Obtener experiencia laboral relevante.<br>
+                3. Aprobar el examen de certificación del IMCP.<br>
+                4. Mantenerse actualizado con cursos y diplomados especializados.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

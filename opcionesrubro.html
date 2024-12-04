@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opciones del Rubro - Formigo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .logo span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .navbar .profile {
+            position: relative;
+        }
+
+        .navbar .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .navbar .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .navbar .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .navbar .dropdown a:hover {
+            background-color: #f4f4f4;
+        }
+
+        .profile.active .dropdown {
+            display: block;
+        }
+
+        /* Contenedor principal */
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .container h1 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .container p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .container button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const profile = document.querySelector(".profile");
+        const dropdown = document.querySelector(".dropdown");
+
+        profile.addEventListener("click", () => {
+            profile.classList.toggle("active");
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!profile.contains(e.target)) {
+                profile.classList.remove("active");
+            }
+        });
+
+        // Redirigir a landingpage.html al hacer clic en "Cerrar Sesión"
+        dropdown.addEventListener("click", (e) => {
+            if (e.target.tagName === "A") {
+                location.href = "landingpage.html";
+            }
+        });
+    });
+</script>
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="mochi.jpg" alt="Formigo Logo">
+            <span>Formigo</span>
+        </div>
+        <div class="profile">
+            <img src="person-circle.svg" alt="User Profile">
+            <div class="dropdown">
+                <a href="#">Cerrar Sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>¿Qué deseas hacer en este rubro?</h1>
+        <p>Selecciona una de las opciones para continuar.</p>
+        <button onclick="location.href='preguntas.html'">Ver Banco de Preguntas</button>
+        <button onclick="location.href='información.html'">Ver Información del Rubro</button>
+    </div>
+</body>
+</html>

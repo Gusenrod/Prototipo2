@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        .navbar img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .container h1 {
+            font-size: 1.8rem;
+            color: #333;
+        }
+        .container select, .container button {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="mochi.jpg" alt="Formigo Logo">
+        <span>Formigo</span>
+    </div>
+    <div class="container">
+        <h1>¿Qué carrera estás estudiando?</h1>
+        <select id="carrera">
+            <option value="">Selecciona tu carrera</option>
+            <option value="derecho">Derecho</option>
+            <option value="ingenieria">Ingeniería de Sistemas</option>
+            <option value="marketing">Marketing</option>
+            <option value="contabilidad">Contabilidad</option>
+        </select>
+        <button onclick="redirigir()">Siguiente</button>
+    </div>
+
+    <script>
+        function redirigir() {
+            var carrera = document.getElementById('carrera').value;
+
+            if (carrera === 'derecho') {
+                window.location.href = 'pregunta2-derecho.html'; // Redirige a la página de Derecho
+            } else if (carrera === 'ingenieria') {
+                window.location.href = 'pregunta2-sistemas.html'; // Redirige a la página de Ingeniería de Sistemas
+            } else if (carrera === 'marketing') {
+                window.location.href = 'pregunta2-marketing.html'; // Redirige a la página de Marketing
+            } else if (carrera === 'contabilidad') {
+                window.location.href = 'pregunta2-contabilidad.html'; // Redirige a la página de Contabilidad
+            } else {
+                alert('Por favor, selecciona una carrera');
+            }
+        }
+    </script>
+</body>
+</html>

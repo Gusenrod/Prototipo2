@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Preguntas - Formigo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .logo span {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .navbar .profile {
+            position: relative;
+        }
+
+        .navbar .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .navbar .dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .navbar .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .navbar .dropdown a:hover {
+            background-color: #f4f4f4;
+        }
+
+        .profile.active .dropdown {
+            display: block;
+        }
+
+        /* Contenedor principal */
+        .container {
+            margin-top: 140px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .question h3 {
+            font-size: 1rem;
+            color: #333;
+            margin: 0 0 10px;
+        }
+
+        .question p {
+            margin: 0;
+            color: #555;
+            font-size: 0.9rem;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const profile = document.querySelector(".profile");
+            const dropdown = document.querySelector(".dropdown");
+    
+            profile.addEventListener("click", () => {
+                profile.classList.toggle("active");
+            });
+    
+            document.addEventListener("click", (e) => {
+                if (!profile.contains(e.target)) {
+                    profile.classList.remove("active");
+                }
+            });
+    
+            // Redirigir a landingpage.html al hacer clic en "Cerrar Sesión"
+            dropdown.addEventListener("click", (e) => {
+                if (e.target.tagName === "A") {
+                    location.href = "landingpage.html";
+                }
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="mochi.jpg" alt="Formigo Logo">
+            <span>Formigo</span>
+        </div>
+        <div class="profile">
+            <img src="person-circle.svg" alt="User Profile">
+            <div class="dropdown">
+                <a href="#">Cerrar Sesión</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h1>Banco de Preguntas</h1>
+        <div class="question">
+            <h3>Pregunta 1</h3>
+            <p><strong>¿Puedes contarme un poco sobre ti?</strong></p>
+            <p>Ejemplo de respuesta: “Soy estudiante de último año de la carrera de Contabilidad en la Universidad XYZ. Me apasiona aprender y aplicar mis conocimientos en análisis financiero. Durante mis estudios, participé en proyectos que mejoraron mi capacidad de trabajar en equipo y resolver problemas.”</p>
+        </div>
+        <div class="question">
+            <h3>Pregunta 2</h3>
+            <p><strong>¿Por qué estás interesado en hacer tus prácticas en nuestra empresa?</strong></p>
+            <p>Ejemplo de respuesta: “Me interesan las prácticas en su empresa porque he investigado su enfoque en proyectos de innovación y sostenibilidad, áreas que me gustaría desarrollar en mi carrera profesional.”</p>
+        </div>
+        <div class="question">
+            <h3>Pregunta 3</h3>
+            <p><strong>¿Qué habilidades consideras que te hacen adecuado para este puesto?</strong></p>
+            <p>Ejemplo de respuesta: “Tengo habilidades en análisis de datos, manejo de herramientas como Excel avanzado y un enfoque en la comunicación efectiva. Además, soy una persona organizada y con buena gestión del tiempo.”</p>
+        </div>
+        <div class="question">
+            <h3>Pregunta 4</h3>
+            <p><strong>¿Cuáles son tus fortalezas y debilidades?</strong></p>
+            <p>Ejemplo de respuesta: “Mi fortaleza principal es mi adaptabilidad y rapidez para aprender nuevas herramientas. Mi debilidad ha sido el manejo del estrés, pero estoy trabajando en técnicas de organización para superarla.”</p>
+        </div>
+        <div class="question">
+            <h3>Pregunta 5</h3>
+            <p><strong>¿Qué esperas aprender en estas prácticas?</strong></p>
+            <p>Ejemplo de respuesta: “Espero adquirir experiencia práctica en el análisis financiero y la gestión de presupuestos, así como aprender a aplicar la teoría en situaciones reales de negocio.”</p>
+        </div>
+        <div class="question">
+            <h3>Pregunta 6</h3>
+            <p><strong>¿Cómo manejas los desafíos académicos y laborales?</strong></p>
+            <p>Ejemplo de respuesta: “Organizo mis tareas utilizando herramientas como calendarios digitales y estableciendo prioridades claras para cumplir con los plazos establecidos.”</p>
+        </div>
+        <div class="question">
+            <h3>Pregunta 7</h3>
+            <p><strong>¿Cómo mantienes tus conocimientos actualizados?</strong></p>
+            <p>Ejemplo de respuesta: “Asisto a webinars, leo blogs relacionados con mi campo y estoy en constante aprendizaje con cursos online como los de Contabilidad Avanzada.”</p>
+        </div>
+        <div class="question">
+            <h3>Pregunta 8</h3>
+            <p><strong>¿Podrías compartir una experiencia de liderazgo durante tus estudios?</strong></p>
+            <p>Ejemplo de respuesta: “Fui líder en un proyecto grupal donde desarrollamos un plan de marketing para una empresa ficticia. Coordiné las tareas y aseguré que todos cumplieran con sus responsabilidades.”</p>
+        </div>
+        <div class="question">
+            <h3>Pregunta 9</h3>
+            <p><strong>¿Cómo te ves profesionalmente en cinco años?</strong></p>
+            <p>Ejemplo de respuesta: “En cinco años, me visualizo como analista financiero, contribuyendo en la toma de decisiones estratégicas de una organización.”</p>
+        </div>
+        <div class="question">
+            <h3>Pregunta 10</h3>
+            <p><strong>¿Qué te motiva a dar lo mejor de ti durante las prácticas?</strong></p>
+            <p>Ejemplo de respuesta: “Mi motivación principal es aprender de profesionales experimentados y contribuir con ideas innovadoras para los proyectos de la empresa.”</p>
+        </div>
+    </div>
+</body>
+</html>
